@@ -4,9 +4,10 @@ import TodoCard from "./TodoCard";
 
 interface TodoListProps {
   todos: ITodo[];
+  setTodos: React.Dispatch<React.SetStateAction<ITodo[]>>;
 }
 
-const TodoList: FC<TodoListProps> = ({ todos }) => {
+const TodoList: FC<TodoListProps> = ({ todos, setTodos }) => {
   return (
     <Flex
       bgColor="gray.50"
@@ -17,7 +18,7 @@ const TodoList: FC<TodoListProps> = ({ todos }) => {
       gap={2}
     >
       {todos.map((v) => (
-        <TodoCard key={v.id} todo={v} />
+        <TodoCard key={v.id} todo={v} todos={todos} setTodos={setTodos} />
       ))}
     </Flex>
   );

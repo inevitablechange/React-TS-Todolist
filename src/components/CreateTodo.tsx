@@ -22,7 +22,7 @@ const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
 
   return (
     <Flex bgColor="teal.100" h={32} justifyContent="center" alignItems="center">
-      <Input onChange={(e) => setContent(e.target.value)} />
+      <Input value={content} onChange={(e) => setContent(e.target.value)} />
       <Button onClick={onClickCreateTodo}>만들기</Button>
     </Flex>
   );
